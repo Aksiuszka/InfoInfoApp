@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Info_Info.Models.Text>
+
+@{
+    ViewData["Title"] = "Teksty";
+}
+
+<div class="container">
+    <div class="row"></div>
+    <!--WyszukiwarkA-->
+    <div class='d-none d-md-block block col-md-12 col-xl-3'>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Wyszukiwarka</h5>
+                <p class="card-text">elo350</p>
+                <a href="#" class="btn btn-primary"></a>
+            </div>
+        </div>
+    </div>
+    <br />
+    <!--Lista textow-->
+
+    <div class='col-xl-9'>
+        @foreach (var item in Model)
+        {
+            <div class="card">
+                <h5 class="card-header oswald text-primary">@item.Title</h5>
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="~/img/mini/1.jpg" class="img-fluid" alt="Opis">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title text-success">@item.User.FullName</h5>
+                            <p class="card-text fst-italic">@item.Summary</p>
+                            <p class="card-text"><small class="text-muted">Data opublikowania</small>@item.AddedDate</p>
+                            <div class="position-relative">
+                                <a href="#" class="btn btn-outline-primary position-absolute bottom-0 end-0">Czytaj</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        }
+ 
+    </div>
+</div>
